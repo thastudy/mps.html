@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pencatatan Pelanggaran OSIS & MPS SMAN 3 GARUT</title>
-  
-  <!-- Tailwind CSS -->
+  <title>Sistem Informasi Pencatatan Pelanggaran - OSIS & MPS SMAN 3 Garut</title>
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    /* Mengubah font utama menjadi Times New Roman */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     body {
+      font-family: 'Inter', sans-serif;
+    }
+    .times-font {
       font-family: 'Times New Roman', Times, serif;
     }
   </style>
@@ -19,153 +22,120 @@
 
   <div class="max-w-6xl mx-auto space-y-6">
 
-    <!-- 1. JUDUL UTAMA (TIMES NEW ROMAN & RAPAT DUA BARIS) -->
-    <div class="bg-white py-8 px-6 rounded-2xl shadow-sm text-center border border-slate-200">
-      <h1 class="text-2xl md:text-3xl font-bold text-slate-900 uppercase tracking-wide leading-snug">
-        PENCATATAN PELANGGARAN OSIS & MPS<br>
-        SMAN 3 GARUT
-      </h1>
+    <!-- 1. JUDUL UTAMA -->
+    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 text-center relative overflow-hidden">
+      <!-- Watermark Logo MPS -->
+      <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+        <img src="MPS - SMAN 3 Garut.png" alt="Logo MPS" class="w-48 h-48 md:w-56 md:h-56 object-contain">
+      </div>
+
+      <div class="relative z-10 space-y-1">
+        <h1 class="times-font font-bold text-xl md:text-3xl text-slate-900 tracking-wide uppercase leading-tight">
+          SISTEM INFORMASI PENCATATAN PELANGGARAN
+        </h1>
+        <h2 class="times-font font-bold text-lg md:text-2xl text-slate-800 tracking-wide uppercase leading-tight">
+          ORGANISASI SISWA INTRA SEKOLAH (OSIS) & MAJELIS PERWAKILAN SISWA (MPS)
+        </h2>
+        <h3 class="times-font font-bold text-md md:text-xl text-slate-700 tracking-wide uppercase leading-tight">
+          SMA NEGERI 3 GARUT
+        </h3>
+        <p class="text-xs md:text-sm text-slate-500 font-medium pt-1">
+          Tahun Ajaran 2024/2025
+        </p>
+      </div>
     </div>
 
-    <!-- 2. BOBOT PELANGGARAN -->
-    <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-blue-500 space-y-3">
-      <h2 class="text-lg font-bold text-slate-800">Bobot Pelanggaran</h2>
-      <ul class="space-y-1.5 text-sm font-medium text-slate-700">
-        <li class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-slate-800"></span>
-          <span><b>Pelanggaran Ringan:</b> -5 Poin</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-slate-800"></span>
-          <span><b>Pelanggaran Berat:</b> -15 Poin</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-slate-800"></span>
-          <span><b>Poin Awal Setiap Anggota:</b> 100 Poin</span>
-        </li>
-      </ul>
-    </div>
+    <!-- 2. FORM INPUT DATA PELANGGARAN -->
+    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+      <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2 border-b pb-3">
+        <i data-lucide="user-plus" class="w-5 h-5 text-blue-600"></i>
+        Form Catat Pelanggaran Siswa
+      </h3>
 
-    <!-- 3. TINGKAT SANKSI -->
-    <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-red-500 space-y-4">
-      <h2 class="text-lg font-bold text-slate-800">Tingkat Sanksi</h2>
-      <div class="space-y-3 text-sm font-medium max-w-md">
-        <div class="flex justify-between items-center">
-          <span class="text-slate-700">Berkurang &ge; 25 Poin (Sisa &le; 75):</span>
-          <span class="bg-amber-100 text-amber-700 px-3 py-1 rounded-lg font-bold text-xs tracking-wider">SP 1</span>
+      <form id="violationForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Nama Siswa</label>
+          <input type="text" id="studentName" placeholder="Masukkan nama lengkap" required
+            class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
         </div>
-        <div class="flex justify-between items-center">
-          <span class="text-slate-700">Berkurang &ge; 50 Poin (Sisa &le; 50):</span>
-          <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-lg font-bold text-xs tracking-wider">SP 2</span>
-        </div>
-        <div class="flex justify-between items-center">
-          <span class="text-slate-700">Poin Habis (0 Poin):</span>
-          <span class="bg-rose-100 text-rose-700 px-3 py-1 rounded-lg font-bold text-xs tracking-wider">SP 3</span>
-        </div>
-      </div>
-    </div>
 
-    <!-- 4. PELANGGARAN HARIAN -->
-    <div class="bg-white p-6 rounded-2xl shadow-sm border border-blue-400 space-y-5">
-      <h2 class="text-xl font-bold text-slate-800">Pelanggaran Harian</h2>
-      
-      <!-- Berat -->
-      <div class="space-y-2">
-        <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider">KRITERIA PELANGGARAN BERAT (-15 POIN)</h3>
-        <ul class="space-y-1.5 text-sm text-slate-700 font-medium pl-2">
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Tidak mengikuti rapat tanpa keterangan apapun</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Merokok / Bolos / Kasus seksual</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Mencoreng nama baik sekolah / organisasi</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Almet dipakai oleh orang lain / Menyalagunakan jabatan</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Pacaran berlebihan</li>
-        </ul>
-      </div>
-
-      <!-- Ringan -->
-      <div class="space-y-2 pt-2">
-        <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider">KRITERIA PELANGGARAN RINGAN (-5 POIN)</h3>
-        <ul class="space-y-1.5 text-sm text-slate-700 font-medium pl-2">
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Kesiangan 2x</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Make up berlebihan 2x</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Atribut tidak lengkap 3x</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Tidak melaksanakan tugas 3x</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Izin saat ada rapat tanpa keterangan yang jelas 3x</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 5. PELANGGARAN EVENT / KEGIATAN -->
-    <div class="bg-white p-6 rounded-2xl shadow-sm border border-blue-400 space-y-5">
-      <h2 class="text-xl font-bold text-slate-800">Pelanggaran Event / Kegiatan</h2>
-      
-      <!-- Berat -->
-      <div class="space-y-2">
-        <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider">KRITERIA PELANGGARAN BERAT (-15 POIN)</h3>
-        <ul class="space-y-1.5 text-sm text-slate-700 font-medium pl-2">
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Tidak hadir tanpa keterangan 2x berturut-turut / 3x akumulasi</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Tidak mengikuti evaluasi / acara tanpa keterangan</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Hilang/tidak memberikan kabar saat dibutuhkan organisasi</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Bolos / Merokok / Kasus seksual</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Mencoreng nama baik / Menyalahgunakan jabatan / Almet dipinjamkan</li>
-        </ul>
-      </div>
-
-      <!-- Ringan -->
-      <div class="space-y-2 pt-2">
-        <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider">KRITERIA PELANGGARAN RINGAN (-5 POIN)</h3>
-        <ul class="space-y-1.5 text-sm text-slate-700 font-medium pl-2">
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Kesiangan 2x</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Menggunakan/membawa make up berlebihan 3x</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Makan atau minum di luar 3x</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Tidak memakai atribut lengkap 3x</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Tidak melaksanakan tugas 3x / Melanggar tatib ringan 3x</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Bertugas tanpa memakai almet 2x</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 6. TABEL PENCATATAN POIN PENGURUS -->
-    <div class="pt-6 space-y-4">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-white p-4 rounded-xl shadow-sm">
-        <h2 class="text-lg font-bold text-slate-800">Daftar Poin Pelanggaran Anggota (103 Orang)</h2>
-        
-        <div class="flex flex-wrap items-center gap-2">
-          <input 
-            type="text" 
-            id="searchInput" 
-            onkeyup="filterData()" 
-            placeholder="Cari nama/kelas..." 
-            class="border rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-slate-400"
-          />
-          <select id="orgFilter" onchange="filterData()" class="border rounded-lg px-3 py-1.5 text-sm">
-            <option value="">Semua Organisasi</option>
-            <option value="OSIS">OSIS</option>
-            <option value="MPS">MPS</option>
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Kelas</label>
+          <select id="studentClass" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="">-- Pilih Kelas --</option>
+            <option value="X-1">X-1</option>
+            <option value="X-2">X-2</option>
+            <option value="XI-1">XI-1</option>
+            <option value="XI-2">XI-2</option>
+            <option value="XII-1">XII-1</option>
+            <option value="XII-2">XII-2</option>
           </select>
-          <button onclick="resetData()" class="bg-red-50 text-red-600 border border-red-200 px-3 py-1.5 rounded-lg text-sm font-semibold hover:bg-red-100">
-            Reset All
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Jenis Pelanggaran</label>
+          <input type="text" id="violationType" placeholder="Contoh: Terlambat, Atribut Tidak Lengkap" required
+            class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Poin Pelanggaran</label>
+          <input type="number" id="violationPoints" min="1" placeholder="Masukkan jumlah poin" required
+            class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div class="md:col-span-2">
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Petugas / Pelapor (OSIS/MPS)</label>
+          <input type="text" id="reporter" placeholder="Masukkan nama petugas" required
+            class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div class="md:col-span-2 text-right pt-2">
+          <button type="submit"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-lg transition-all flex items-center gap-2 ml-auto">
+            <i data-lucide="save" class="w-4 h-4"></i> Simpan Data Pelanggaran
           </button>
         </div>
+      </form>
+    </div>
+
+    <!-- 3. TABEL REKAPITULASI DATA -->
+    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 space-y-4">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b pb-4">
+        <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+          <i data-lucide="file-text" class="w-5 h-5 text-blue-600"></i>
+          Rekapitulasi Pelanggaran Siswa
+        </h3>
+        
+        <!-- Fitur Pencarian -->
+        <div class="relative w-full md:w-64">
+          <input type="text" id="searchInput" placeholder="Cari nama atau kelas..."
+            class="w-full pl-9 pr-3 py-1.5 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-2.5"></i>
+        </div>
       </div>
 
-      <div class="bg-white rounded-xl shadow-sm overflow-x-auto border border-gray-200">
-        <table class="w-full text-center border-collapse min-w-[1000px]">
+      <!-- Tabel -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm border-collapse">
           <thead>
-            <tr class="bg-slate-900 text-white text-xs md:text-sm uppercase tracking-wider">
-              <th class="p-3 text-center">No</th>
-              <th class="p-3 text-left">Nama Anggota</th>
-              <th class="p-3">Kelas</th>
-              <th class="p-3">Organisasi</th>
-              <th class="p-3">Sekbid / Komisi</th>
-              <th class="p-3">Ringan (-5)</th>
-              <th class="p-3">Berat (-15)</th>
-              <th class="p-3">Catatan</th>
-              <th class="p-3">Sisa Poin</th>
-              <th class="p-3">Status Sanksi</th>
+            <tr class="bg-slate-50 border-b border-slate-200 text-slate-700">
+              <th class="p-3 font-semibold">No</th>
+              <th class="p-3 font-semibold">Tanggal</th>
+              <th class="p-3 font-semibold">Nama Siswa</th>
+              <th class="p-3 font-semibold">Kelas</th>
+              <th class="p-3 font-semibold">Jenis Pelanggaran</th>
+              <th class="p-3 font-semibold text-center">Poin</th>
+              <th class="p-3 font-semibold">Petugas</th>
+              <th class="p-3 font-semibold text-center">Aksi</th>
             </tr>
           </thead>
-          <tbody id="tableBody" class="text-sm divide-y">
-            <!-- Diisi JS -->
+          <tbody id="violationTableBody">
+            <tr id="emptyRow">
+              <td colspan="8" class="text-center p-6 text-slate-400">
+                Belum ada data pelanggaran yang dicatat.
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -174,238 +144,103 @@
   </div>
 
   <script>
-    // Data 103 Pengurus
-    const initialData = [
-      { no: 1, nama: "Muhammad Dian Gumilang", kelas: "X.1", org: "OSIS", sekbid: "Sekbid 3" },
-      { no: 2, nama: "Syerin Azzahra Aprilia", kelas: "X.1", org: "OSIS", sekbid: "Sekbid 3" },
-      { no: 3, nama: "Ghefira Alkalisha Putri", kelas: "X.2", org: "OSIS", sekbid: "Sekbid 1" },
-      { no: 4, nama: "Azka Netha Ayunda Nafisha", kelas: "X.2", org: "OSIS", sekbid: "Sekbid 8" },
-      { no: 5, nama: "Pelangi Azra Asyifa", kelas: "X.2", org: "OSIS", sekbid: "Sekbid 6" },
-      { no: 6, nama: "Argian Kemal Maulana", kelas: "X.2", org: "OSIS", sekbid: "Sekbid 4" },
-      { no: 7, nama: "Syahneu Seilen Herdian", kelas: "X.2", org: "OSIS", sekbid: "Sekbid 3" },
-      { no: 8, nama: "Haila Hasnatus Saadah", kelas: "X.2", org: "OSIS", sekbid: "Sekbid 1" },
-      { no: 9, nama: "Liyanra Yasmi", kelas: "X.3", org: "OSIS", sekbid: "Sekbid 5" },
-      { no: 10, nama: "M Ridwan Mumtaz Muttaqin", kelas: "X.4", org: "OSIS", sekbid: "Sekbid 2" },
-      { no: 11, nama: "Wardah Tsabita Ramadinah", kelas: "X.4", org: "OSIS", sekbid: "Sekbid 4" },
-      { no: 12, nama: "Tiffany Azaria Riandy", kelas: "X.4", org: "OSIS", sekbid: "Sekbid 2" },
-      { no: 13, nama: "Jazzyra Shiby Radisty", kelas: "X.4", org: "OSIS", sekbid: "Sekbid 8" },
-      { no: 14, nama: "Anisa Sri Yuliani", kelas: "X.5", org: "OSIS", sekbid: "Sekbid 8" },
-      { no: 15, nama: "Salsabila Rahma", kelas: "X.5", org: "OSIS", sekbid: "Sekbid 2" },
-      { no: 16, nama: "Agni Nafisah", kelas: "X.5", org: "OSIS", sekbid: "Sekbid 2" },
-      { no: 17, nama: "Din-Din", kelas: "X.6", org: "OSIS", sekbid: "Sekbid 4" },
-      { no: 18, nama: "Rava Muhammad Rasyid", kelas: "X.6", org: "OSIS", sekbid: "Sekbid 1" },
-      { no: 19, nama: "Teguh Abdi Prawira", kelas: "X.7", org: "OSIS", sekbid: "Sekbid 2" },
-      { no: 20, nama: "Humaira", kelas: "X.7", org: "OSIS", sekbid: "Sekbid 9" },
-      { no: 21, nama: "Fathih Rozaan Ashidqi", kelas: "X.8", org: "OSIS", sekbid: "Sekbid 1" },
-      { no: 22, nama: "Suci Rahmawati", kelas: "X.9", org: "OSIS", sekbid: "Sekbid 8" },
-      { no: 23, nama: "Sarah Syafrini", kelas: "X.9", org: "OSIS", sekbid: "Sekbid 3" },
-      { no: 24, nama: "Diaz Azka Fauzi", kelas: "X.9", org: "OSIS", sekbid: "Sekbid 5" },
-      { no: 25, nama: "Naima Nurul Aini", kelas: "X.9", org: "OSIS", sekbid: "Sekbid 6" },
-      { no: 26, nama: "Renaya Maharani", kelas: "X.9", org: "OSIS", sekbid: "Sekbid 7" },
-      { no: 27, nama: "Hasnabila Jadzba Hashufa", kelas: "X.10", org: "OSIS", sekbid: "Sekbid 3" },
-      { no: 28, nama: "Resti Destian Kamadia", kelas: "X.10", org: "OSIS", sekbid: "Sekbid 6" },
-      { no: 29, nama: "Suci Ramadhanianti H", kelas: "X.10", org: "OSIS", sekbid: "Sekbid 4" },
-      { no: 30, nama: "Suci Intan N", kelas: "X.10", org: "OSIS", sekbid: "Sekbid 9" },
-      { no: 31, nama: "Sekar Asih Yulianti", kelas: "X.10", org: "OSIS", sekbid: "Sekbid 5" },
-      { no: 32, nama: "Satria Alif", kelas: "X.10", org: "OSIS", sekbid: "Sekbid 4" },
-      { no: 33, nama: "Asti Sari", kelas: "X.11", org: "OSIS", sekbid: "Sekbid 6" },
-      { no: 34, nama: "Radittya Nugraha Efendi", kelas: "X.11", org: "OSIS", sekbid: "Sekbid 7" },
-      { no: 35, nama: "Satrio Aldiansyah", kelas: "X.11", org: "OSIS", sekbid: "Sekbid 7" },
-      { no: 36, nama: "Alfi Saepudin Putra", kelas: "X.11", org: "OSIS", sekbid: "Sekbid 9" },
-      { no: 37, nama: "Queensha Bintang Khairunnisa", kelas: "X.12", org: "OSIS", sekbid: "Sekbid 7" },
-      { no: 38, nama: "M Ikhwan Fauzi", kelas: "X.12", org: "OSIS", sekbid: "Sekbid 5" },
-      { no: 39, nama: "Shela Sucilawati", kelas: "XI IPA 1", org: "OSIS", sekbid: "Sekbid 9" },
-      { no: 40, nama: "Zapar Umar Thalib", kelas: "XI IPA 1", org: "OSIS", sekbid: "Sekbid 8" },
-      { no: 41, nama: "Syaina Nurhikmah", kelas: "XI IPA 1", org: "OSIS", sekbid: "Sekbid 4" },
-      { no: 42, nama: "Muhammad Rizky Ardiansyah", kelas: "XI IPA 2", org: "OSIS", sekbid: "BPH" },
-      { no: 43, nama: "Zaki Reka Swara", kelas: "XI IPA 2", org: "OSIS", sekbid: "BPH" },
-      { no: 44, nama: "Nugi Anugrah Syahbani", kelas: "XI IPA 2", org: "OSIS", sekbid: "Sekbid 7" },
-      { no: 45, nama: "Salsabila Mawulida", kelas: "XI IPA 2", org: "OSIS", sekbid: "Sekbid 4" },
-      { no: 46, nama: "Muhammad Dafin", kelas: "XI IPA 2", org: "OSIS", sekbid: "Sekbid 6" },
-      { no: 47, nama: "Pazri Azhar", kelas: "XI IPA 2", org: "OSIS", sekbid: "Sekbid 9" },
-      { no: 48, nama: "Syifa Chairunnisa", kelas: "XI IPA 3", org: "OSIS", sekbid: "Sekbid 9" },
-      { no: 49, nama: "Syipa Nurpadilah", kelas: "XI IPA 4", org: "OSIS", sekbid: "Sekbid 7" },
-      { no: 50, nama: "Ziran Sabil Holqi R", kelas: "XI IPA 4", org: "OSIS", sekbid: "Sekbid 5" },
-      { no: 51, nama: "Akhdan Fadhli Al Tamam", kelas: "XI IPA 4", org: "OSIS", sekbid: "Sekbid 3" },
-      { no: 52, nama: "Fikri Ahmad Attsawabulkhair", kelas: "XI IPA 4", org: "OSIS", sekbid: "Sekbid 2" },
-      { no: 53, nama: "Zahra Nuraeni", kelas: "XI IPA 5", org: "OSIS", sekbid: "BPH" },
-      { no: 54, nama: "Raisa Nur Afiani", kelas: "XI IPA 5", org: "OSIS", sekbid: "Sekbid 1" },
-      { no: 55, nama: "Sayla Siti Rohmah", kelas: "XI IPA 5", org: "OSIS", sekbid: "Sekbid 5" },
-      { no: 56, nama: "Anisa Syafaatul", kelas: "XI IPA 5", org: "OSIS", sekbid: "Sekbid 1" },
-      { no: 57, nama: "Wafa Nibras Taqiyyah", kelas: "XI IPA 6", org: "OSIS", sekbid: "BPH" },
-      { no: 58, nama: "Siti Nurmaulida", kelas: "XI IPA 6", org: "OSIS", sekbid: "Sekbid 3" },
-      { no: 59, nama: "Nur Aida Adha", kelas: "XI IPA 6", org: "OSIS", sekbid: "Sekbid 6" },
-      { no: 60, nama: "Sahla Jamilatuz", kelas: "XI IPA 6", org: "OSIS", sekbid: "Sekbid 5" },
-      { no: 61, nama: "Delisa Faiza Fortuna", kelas: "XI IPA 7", org: "OSIS", sekbid: "Sekbid 4" },
-      { no: 62, nama: "Azmi Nurahmi Sumarna", kelas: "XI IPA 7", org: "OSIS", sekbid: "Sekbid 8" },
-      { no: 63, nama: "Deti Nurzazilah", kelas: "XI IPS 1", org: "OSIS", sekbid: "Sekbid 9" },
-      { no: 64, nama: "Fadhlan Abdurrofi", kelas: "XI IPS 1", org: "OSIS", sekbid: "Sekbid 7" },
-      { no: 65, nama: "Naira Handaru", kelas: "XI IPS 2", org: "OSIS", sekbid: "Sekbid 1" },
-      { no: 66, nama: "Naila Nurul Aprilia", kelas: "XI IPS 2", org: "OSIS", sekbid: "Sekbid 2" },
-      { no: 67, nama: "Rain Shaumy Riziq", kelas: "XI IPS 2", org: "OSIS", sekbid: "Sekbid 7" },
-      { no: 68, nama: "Prita Navisa Pramoudya", kelas: "XI IPS 2", org: "OSIS", sekbid: "Sekbid 8" },
-      { no: 69, nama: "Maryam Rizkya Nursya'bani", kelas: "XI IPS 4", org: "OSIS", sekbid: "Sekbid 6" },
-      { no: 70, nama: "Aliya Sri Rahayu", kelas: "XI IPS 4", org: "OSIS", sekbid: "Sekbid 6" },
-      { no: 71, nama: "Intan Nurul Hidayah", kelas: "XI IPS 5", org: "OSIS", sekbid: "Sekbid 3" },
-      { no: 72, nama: "Muhammad Ananda R.A.", kelas: "XI IPA 1", org: "OSIS", sekbid: "Sekbid 2" },
-      { no: 73, nama: "Deli Safitri", kelas: "XI IPA 1", org: "OSIS", sekbid: "Sekbid 2" },
-      { no: 74, nama: "Haneco Lauzher B.A.", kelas: "XI IPA 2", org: "OSIS", sekbid: "Sekbid 5" },
-      { no: 75, nama: "Muhamad Agung", kelas: "XI IPA 4", org: "OSIS", sekbid: "Sekbid 3" },
-      { no: 76, nama: "Rehan Sandi M.", kelas: "XI IPA 5", org: "OSIS", sekbid: "Sekbid 1" },
-      { no: 77, nama: "Abyan Abdul Jafar", kelas: "XI IPA 6", org: "OSIS", sekbid: "Sekbid 2" },
-      { no: 78, nama: "Fatir Al Farizi", kelas: "XI IPA 6", org: "OSIS", sekbid: "Sekbid 4" },
-      { no: 79, nama: "Alexa Gustira B.P.", kelas: "XI IPA 7", org: "OSIS", sekbid: "Sekbid 8" },
-      { no: 80, nama: "Dwi Damayanti Putri", kelas: "XI IPS 2", org: "MPS", sekbid: "BPH" },
-      { no: 81, nama: "Fayruz Al Beyhaqie", kelas: "XI IPA 3", org: "MPS", sekbid: "BPH" },
-      { no: 82, nama: "Talitha Sahara Candrawati", kelas: "XI IPA 1", org: "MPS", sekbid: "BPH" },
-      { no: 83, nama: "Rabika Hira", kelas: "XI IPA 1", org: "MPS", sekbid: "BPH" },
-      { no: 84, nama: "Sera Tuti Juwita", kelas: "XI IPA 1", org: "MPS", sekbid: "Komisi B" },
-      { no: 85, nama: "Nilam Tristi Fatimah", kelas: "XI IPA 2", org: "MPS", sekbid: "Komisi C" },
-      { no: 86, nama: "Nadia Ananda Putri", kelas: "XI IPA 3", org: "MPS", sekbid: "Komisi D" },
-      { no: 87, nama: "Firman Maulana", kelas: "XI IPA 3", org: "MPS", sekbid: "Komisi C" },
-      { no: 88, nama: "M. Rafi Alfarizi", kelas: "XI IPA 5", org: "MPS", sekbid: "Komisi B" },
-      { no: 89, nama: "M. Nizar Rayyan Arfata", kelas: "XI IPA 6", org: "MPS", sekbid: "Komisi A" },
-      { no: 90, nama: "Bianka Anindya Farid", kelas: "XI IPA 6", org: "MPS", sekbid: "Komisi D" },
-      { no: 91, nama: "Putri Kaniarasty Agustin", kelas: "XI IPS 3", org: "MPS", sekbid: "Komisi A" },
-      { no: 92, nama: "Fahri Husaeni", kelas: "X 1", org: "MPS", sekbid: "Komisi A" },
-      { no: 93, nama: "Quinsha Fathia Azzahra", kelas: "X 1", org: "MPS", sekbid: "Komisi B" },
-      { no: 94, nama: "Kaffa Abqary Kawthar", kelas: "X 2", org: "MPS", sekbid: "Komisi C" },
-      { no: 95, nama: "Siti Hesti Muamanah", kelas: "X 4", org: "MPS", sekbid: "Komisi A" },
-      { no: 96, nama: "Putri Anindyta", kelas: "X 6", org: "MPS", sekbid: "Komisi C" },
-      { no: 97, nama: "Renata Utami", kelas: "X 6", org: "MPS", sekbid: "Komisi C" },
-      { no: 98, nama: "Meysi Permata Dewi", kelas: "X 7", org: "MPS", sekbid: "Komisi B" },
-      { no: 99, nama: "Aira Askya Putri", kelas: "X 7", org: "MPS", sekbid: "Komisi D" },
-      { no: 100, nama: "Agung Ilham Bukhori", kelas: "X 8", org: "MPS", sekbid: "Komisi D" },
-      { no: 101, nama: "Satria", kelas: "X 8", org: "MPS", sekbid: "Komisi D" },
-      { no: 102, nama: "Azwan Salawudin", kelas: "X 9", org: "MPS", sekbid: "Komisi A" },
-      { no: 103, nama: "Mochamad Farid Yusuf", kelas: "X 9", org: "MPS", sekbid: "Komisi B" }
-    ];
+    // Inisialisasi Lucide Icons
+    lucide.createIcons();
 
-    let dataAnggota = initialData.map(item => ({ ...item, ringan: 0, berat: 0, catatan: "" }));
+    // Array Penyimpanan Data
+    let violations = JSON.parse(localStorage.getItem('mps_violations')) || [];
 
-    function updateCounter(no, type, delta) {
-      const idx = dataAnggota.findIndex(a => a.no === no);
-      if (idx !== -1) {
-        if (type === 'ringan') dataAnggota[idx].ringan = Math.max(0, dataAnggota[idx].ringan + delta);
-        if (type === 'berat') dataAnggota[idx].berat = Math.max(0, dataAnggota[idx].berat + delta);
-        filterData();
+    const form = document.getElementById('violationForm');
+    const tableBody = document.getElementById('violationTableBody');
+    const searchInput = document.getElementById('searchInput');
+
+    // Fungsi Render Tabel
+    function renderTable(filterText = '') {
+      tableBody.innerHTML = '';
+
+      const filteredData = violations.filter(item => 
+        item.name.toLowerCase().includes(filterText.toLowerCase()) ||
+        item.class.toLowerCase().includes(filterText.toLowerCase())
+      );
+
+      if (filteredData.length === 0) {
+        tableBody.innerHTML = `
+          <tr>
+            <td colspan="8" class="text-center p-6 text-slate-400">
+              ${filterText ? 'Data tidak ditemukan.' : 'Belum ada data pelanggaran yang dicatat.'}
+            </td>
+          </tr>
+        `;
+        return;
       }
-    }
 
-    function updateCatatan(no, val) {
-      const idx = dataAnggota.findIndex(a => a.no === no);
-      if (idx !== -1) dataAnggota[idx].catatan = val;
-    }
-
-    function getSisaPoin(ringan, berat) {
-      return Math.max(0, 100 - ((ringan * 5) + (berat * 15)));
-    }
-
-    function getStatusBadge(poin) {
-      if (poin > 75) return `<span class="bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-md text-xs font-bold">Aman</span>`;
-      if (poin > 50) return `<span class="bg-amber-100 text-amber-700 px-2.5 py-1 rounded-md text-xs font-bold">SP 1</span>`;
-      if (poin > 0) return `<span class="bg-orange-100 text-orange-700 px-2.5 py-1 rounded-md text-xs font-bold">SP 2</span>`;
-      return `<span class="bg-rose-100 text-rose-700 px-2.5 py-1 rounded-md text-xs font-bold">SP 3</span>`;
-    }
-
-    function renderTable(data) {
-      const tbody = document.getElementById("tableBody");
-      tbody.innerHTML = "";
-
-      data.forEach((item) => {
-        const sisaPoin = getSisaPoin(item.ringan, item.berat);
-        const row = document.createElement("tr");
-        row.className = "hover:bg-slate-50 border-b border-gray-100";
-
-        const orgBadgeClass = item.org === 'MPS' 
-          ? 'bg-blue-100 text-blue-700 font-extrabold' 
-          : 'bg-slate-300 text-slate-800 font-extrabold';
-
-        row.innerHTML = `
-          <!-- Nomor -->
-          <td class="p-3 text-slate-400 font-medium">${item.no}</td>
-
-          <!-- Nama Anggota -->
-          <td class="p-3 text-left font-semibold text-slate-800">${item.nama}</td>
-
-          <!-- Kelas -->
-          <td class="p-3 text-slate-600">${item.kelas}</td>
-
-          <!-- Organisasi -->
-          <td class="p-3">
-            <span class="px-2.5 py-1 rounded-md text-xs ${orgBadgeClass}">
-              ${item.org}
+      filteredData.forEach((item, index) => {
+        const tr = document.createElement('tr');
+        tr.className = 'border-b border-slate-100 hover:bg-slate-50/80 transition-colors';
+        tr.innerHTML = `
+          <td class="p-3">${index + 1}</td>
+          <td class="p-3 text-slate-500">${item.date}</td>
+          <td class="p-3 font-semibold text-slate-800">${item.name}</td>
+          <td class="p-3">${item.class}</td>
+          <td class="p-3">${item.type}</td>
+          <td class="p-3 text-center">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold ${
+              item.points >= 50 ? 'bg-red-100 text-red-700' :
+              item.points >= 20 ? 'bg-amber-100 text-amber-700' :
+              'bg-blue-100 text-blue-700'
+            }">
+              ${item.points}
             </span>
           </td>
-
-          <!-- Sekbid / Komisi -->
-          <td class="p-3 text-xs text-slate-500 font-medium">${item.sekbid}</td>
-
-          <!-- Pelanggaran Ringan (-5) -->
-          <td class="p-3">
-            <div class="flex items-center justify-center gap-1.5">
-              <button onclick="updateCounter(${item.no}, 'ringan', -1)" class="w-6 h-6 bg-slate-100 hover:bg-slate-200 font-bold rounded text-slate-600">-</button>
-              <span class="w-4 text-center font-bold">${item.ringan}</span>
-              <button onclick="updateCounter(${item.no}, 'ringan', 1)" class="w-6 h-6 bg-amber-500 hover:bg-amber-600 font-bold rounded text-white">+</button>
-            </div>
-          </td>
-
-          <!-- Pelanggaran Berat (-15) -->
-          <td class="p-3">
-            <div class="flex items-center justify-center gap-1.5">
-              <button onclick="updateCounter(${item.no}, 'berat', -1)" class="w-6 h-6 bg-slate-100 hover:bg-slate-200 font-bold rounded text-slate-600">-</button>
-              <span class="w-4 text-center font-bold">${item.berat}</span>
-              <button onclick="updateCounter(${item.no}, 'berat', 1)" class="w-6 h-6 bg-rose-500 hover:bg-rose-600 font-bold rounded text-white">+</button>
-            </div>
-          </td>
-
-          <!-- Catatan -->
-          <td class="p-3">
-            <input 
-              type="text" 
-              value="${item.catatan}" 
-              onchange="updateCatatan(${item.no}, this.value)"
-              placeholder="-" 
-              class="border rounded px-2 py-1 text-xs w-28 text-center focus:outline-none focus:ring-1 focus:ring-slate-400"
-            />
-          </td>
-
-          <!-- Sisa Poin -->
-          <td class="p-3 font-bold text-base ${sisaPoin < 100 ? 'text-rose-600' : 'text-slate-800'}">
-            ${sisaPoin}
-          </td>
-
-          <!-- Status Sanksi -->
-          <td class="p-3">
-            ${getStatusBadge(sisaPoin)}
+          <td class="p-3 text-slate-600">${item.reporter}</td>
+          <td class="p-3 text-center">
+            <button onclick="deleteViolation(${item.id})" class="text-red-500 hover:text-red-700 p-1 rounded transition-colors" title="Hapus">
+              <i data-lucide="trash-2" class="w-4 h-4"></i>
+            </button>
           </td>
         `;
-
-        tbody.appendChild(row);
-      });
-    }
-
-    function filterData() {
-      const searchVal = document.getElementById("searchInput").value.toLowerCase();
-      const orgVal = document.getElementById("orgFilter").value;
-
-      const filtered = dataAnggota.filter(item => {
-        const matchSearch = item.nama.toLowerCase().includes(searchVal) || item.kelas.toLowerCase().includes(searchVal);
-        const matchOrg = orgVal === "" || item.org === orgVal;
-        return matchSearch && matchOrg;
+        tableBody.appendChild(tr);
       });
 
-      renderTable(filtered);
+      lucide.createIcons();
     }
 
-    function resetData() {
-      if (confirm("Reset seluruh hitungan counter?")) {
-        dataAnggota = initialData.map(item => ({ ...item, ringan: 0, berat: 0, catatan: "" }));
-        filterData();
+    // Tambah Data
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const newViolation = {
+        id: Date.now(),
+        date: new Date().toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' }),
+        name: document.getElementById('studentName').value,
+        class: document.getElementById('studentClass').value,
+        type: document.getElementById('violationType').value,
+        points: parseInt(document.getElementById('violationPoints').value),
+        reporter: document.getElementById('reporter').value
+      };
+
+      violations.unshift(newViolation);
+      localStorage.setItem('mps_violations', JSON.stringify(violations));
+      form.reset();
+      renderTable();
+    });
+
+    // Hapus Data
+    window.deleteViolation = function(id) {
+      if (confirm('Yakin ingin menghapus data ini?')) {
+        violations = violations.filter(item => item.id !== id);
+        localStorage.setItem('mps_violations', JSON.stringify(violations));
+        renderTable(searchInput.value);
       }
-    }
+    };
 
-    renderTable(dataAnggota);
+    // Pencarian
+    searchInput.addEventListener('input', (e) => {
+      renderTable(e.target.value);
+    });
+
+    // Render Awal
+    renderTable();
   </script>
 </body>
 </html>
