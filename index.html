@@ -9,125 +9,105 @@
   <script src="https://cdn.tailwindcss.com"></script>
   
   <style>
-    /* Mengubah font utama menjadi Times New Roman */
     body {
       font-family: 'Times New Roman', Times, serif;
     }
   </style>
 </head>
-<body class="bg-slate-100 p-4 md:p-8 text-slate-800">
+<body class="p-4 md:p-8 text-slate-900 bg-white">
 
   <div class="max-w-6xl mx-auto space-y-6">
 
-    <!-- 1. JUDUL UTAMA (TIMES NEW ROMAN & RAPAT DUA BARIS) -->
-    <div class="bg-white py-8 px-6 rounded-2xl shadow-sm text-center border border-slate-200">
-      <h1 class="text-2xl md:text-3xl font-bold text-slate-900 uppercase tracking-wide leading-snug">
+    <!-- 1. JUDUL UTAMA -->
+    <div class="text-center py-4 border-b border-slate-300">
+      <h1 class="text-2xl md:text-3xl font-bold uppercase tracking-wide leading-snug">
         PENCATATAN PELANGGARAN OSIS & MPS<br>
         SMAN 3 GARUT
       </h1>
     </div>
 
     <!-- 2. BOBOT PELANGGARAN -->
-    <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-blue-500 space-y-3">
-      <h2 class="text-lg font-bold text-slate-800">Bobot Pelanggaran</h2>
-      <ul class="space-y-1.5 text-sm font-medium text-slate-700">
+    <div class="space-y-2 border-b border-slate-300 pb-4">
+      <h2 class="text-lg font-bold">Bobot Pelanggaran</h2>
+      <ul class="space-y-1 text-sm font-medium">
         <li class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-slate-800"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-slate-900"></span>
           <span><b>Pelanggaran Ringan:</b> -5 Poin</span>
         </li>
         <li class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-slate-800"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-slate-900"></span>
           <span><b>Pelanggaran Berat:</b> -15 Poin</span>
         </li>
         <li class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-slate-800"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-slate-900"></span>
           <span><b>Poin Awal Setiap Anggota:</b> 100 Poin</span>
         </li>
       </ul>
     </div>
 
-    <!-- 3. TINGKAT SANKSI -->
-    <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-red-500 space-y-4">
-      <h2 class="text-lg font-bold text-slate-800">Tingkat Sanksi</h2>
-      <div class="space-y-3 text-sm font-medium max-w-md">
-        <div class="flex justify-between items-center">
-          <span class="text-slate-700">Berkurang &ge; 25 Poin (Sisa &le; 75):</span>
-          <span class="bg-amber-100 text-amber-700 px-3 py-1 rounded-lg font-bold text-xs tracking-wider">SP 1</span>
-        </div>
-        <div class="flex justify-between items-center">
-          <span class="text-slate-700">Berkurang &ge; 50 Poin (Sisa &le; 50):</span>
-          <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-lg font-bold text-xs tracking-wider">SP 2</span>
-        </div>
-        <div class="flex justify-between items-center">
-          <span class="text-slate-700">Poin Habis (0 Poin):</span>
-          <span class="bg-rose-100 text-rose-700 px-3 py-1 rounded-lg font-bold text-xs tracking-wider">SP 3</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4. PELANGGARAN HARIAN -->
-    <div class="bg-white p-6 rounded-2xl shadow-sm border border-blue-400 space-y-5">
-      <h2 class="text-xl font-bold text-slate-800">Pelanggaran Harian</h2>
+    <!-- 3. PELANGGARAN HARIAN -->
+    <div class="space-y-4 border-b border-slate-300 pb-4">
+      <h2 class="text-xl font-bold">Pelanggaran Harian</h2>
       
       <!-- Berat -->
-      <div class="space-y-2">
-        <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider">KRITERIA PELANGGARAN BERAT (-15 POIN)</h3>
-        <ul class="space-y-1.5 text-sm text-slate-700 font-medium pl-2">
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Tidak mengikuti rapat tanpa keterangan apapun</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Merokok / Bolos / Kasus seksual</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Mencoreng nama baik sekolah / organisasi</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Almet dipakai oleh orang lain / Menyalagunakan jabatan</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Pacaran berlebihan</li>
+      <div class="space-y-1">
+        <h3 class="text-xs font-bold text-slate-600 uppercase tracking-wider">KRITERIA PELANGGARAN BERAT (-15 POIN)</h3>
+        <ul class="space-y-1 text-sm font-medium pl-2">
+          <li>&bull; Tidak mengikuti rapat tanpa keterangan apapun</li>
+          <li>&bull; Merokok / Bolos / Kasus seksual</li>
+          <li>&bull; Mencoreng nama baik sekolah / organisasi</li>
+          <li>&bull; Almet dipakai oleh orang lain / Menyalagunakan jabatan</li>
+          <li>&bull; Pacaran berlebihan</li>
         </ul>
       </div>
 
       <!-- Ringan -->
-      <div class="space-y-2 pt-2">
-        <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider">KRITERIA PELANGGARAN RINGAN (-5 POIN)</h3>
-        <ul class="space-y-1.5 text-sm text-slate-700 font-medium pl-2">
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Kesiangan 2x</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Make up berlebihan 2x</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Atribut tidak lengkap 3x</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Tidak melaksanakan tugas 3x</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Izin saat ada rapat tanpa keterangan yang jelas 3x</li>
+      <div class="space-y-1 pt-2">
+        <h3 class="text-xs font-bold text-slate-600 uppercase tracking-wider">KRITERIA PELANGGARAN RINGAN (-5 POIN)</h3>
+        <ul class="space-y-1 text-sm font-medium pl-2">
+          <li>&bull; Kesiangan 2x</li>
+          <li>&bull; Make up berlebihan 2x</li>
+          <li>&bull; Atribut tidak lengkap 3x</li>
+          <li>&bull; Tidak melaksanakan tugas 3x</li>
+          <li>&bull; Izin saat ada rapat tanpa keterangan yang jelas 3x</li>
         </ul>
       </div>
     </div>
 
-    <!-- 5. PELANGGARAN EVENT / KEGIATAN -->
-    <div class="bg-white p-6 rounded-2xl shadow-sm border border-blue-400 space-y-5">
-      <h2 class="text-xl font-bold text-slate-800">Pelanggaran Event / Kegiatan</h2>
+    <!-- 4. PELANGGARAN EVENT / KEGIATAN -->
+    <div class="space-y-4 border-b border-slate-300 pb-4">
+      <h2 class="text-xl font-bold">Pelanggaran Event / Kegiatan</h2>
       
       <!-- Berat -->
-      <div class="space-y-2">
-        <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider">KRITERIA PELANGGARAN BERAT (-15 POIN)</h3>
-        <ul class="space-y-1.5 text-sm text-slate-700 font-medium pl-2">
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Tidak hadir tanpa keterangan 2x berturut-turut / 3x akumulasi</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Tidak mengikuti evaluasi / acara tanpa keterangan</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Hilang/tidak memberikan kabar saat dibutuhkan organisasi</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Bolos / Merokok / Kasus seksual</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Mencoreng nama baik / Menyalahgunakan jabatan / Almet dipinjamkan</li>
+      <div class="space-y-1">
+        <h3 class="text-xs font-bold text-slate-600 uppercase tracking-wider">KRITERIA PELANGGARAN BERAT (-15 POIN)</h3>
+        <ul class="space-y-1 text-sm font-medium pl-2">
+          <li>&bull; Tidak hadir tanpa keterangan 2x berturut-turut / 3x akumulasi</li>
+          <li>&bull; Tidak mengikuti evaluasi / acara tanpa keterangan</li>
+          <li>&bull; Hilang/tidak memberikan kabar saat dibutuhkan organisasi</li>
+          <li>&bull; Bolos / Merokok / Kasus seksual</li>
+          <li>&bull; Mencoreng nama baik / Menyalahgunakan jabatan / Almet dipinjamkan</li>
         </ul>
       </div>
 
       <!-- Ringan -->
-      <div class="space-y-2 pt-2">
-        <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider">KRITERIA PELANGGARAN RINGAN (-5 POIN)</h3>
-        <ul class="space-y-1.5 text-sm text-slate-700 font-medium pl-2">
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Kesiangan 2x</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Menggunakan/membawa make up berlebihan 3x</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Makan atau minum di luar 3x</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Tidak memakai atribut lengkap 3x</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Tidak melaksanakan tugas 3x / Melanggar tatib ringan 3x</li>
-          <li class="flex items-start gap-2"><span class="text-slate-400">&bull;</span> Bertugas tanpa memakai almet 2x</li>
+      <div class="space-y-1 pt-2">
+        <h3 class="text-xs font-bold text-slate-600 uppercase tracking-wider">KRITERIA PELANGGARAN RINGAN (-5 POIN)</h3>
+        <ul class="space-y-1 text-sm font-medium pl-2">
+          <li>&bull; Kesiangan 2x</li>
+          <li>&bull; Menggunakan/membawa make up berlebihan 3x</li>
+          <li>&bull; Makan atau minum di luar 3x</li>
+          <li>&bull; Tidak memakai atribut lengkap 3x</li>
+          <li>&bull; Tidak melaksanakan tugas 3x / Melanggar tatib ringan 3x</li>
+          <li>&bull; Bertugas tanpa memakai almet 2x</li>
         </ul>
       </div>
     </div>
 
-    <!-- 6. TABEL PENCATATAN POIN PENGURUS -->
-    <div class="pt-6 space-y-4">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-white p-4 rounded-xl shadow-sm">
-        <h2 class="text-lg font-bold text-slate-800">Daftar Poin Pelanggaran Anggota (103 Orang)</h2>
+    <!-- 5. TABEL PENCATATAN POIN PENGURUS -->
+    <div class="pt-4 space-y-4">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <h2 class="text-lg font-bold">Daftar Poin Pelanggaran Anggota (103 Orang)</h2>
         
         <div class="flex flex-wrap items-center gap-2">
           <input 
@@ -135,36 +115,35 @@
             id="searchInput" 
             onkeyup="filterData()" 
             placeholder="Cari nama/kelas..." 
-            class="border rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-slate-400"
+            class="border border-slate-400 rounded px-3 py-1 text-sm focus:outline-none"
           />
-          <select id="orgFilter" onchange="filterData()" class="border rounded-lg px-3 py-1.5 text-sm">
+          <select id="orgFilter" onchange="filterData()" class="border border-slate-400 rounded px-3 py-1 text-sm">
             <option value="">Semua Organisasi</option>
             <option value="OSIS">OSIS</option>
             <option value="MPS">MPS</option>
           </select>
-          <button onclick="resetData()" class="bg-red-50 text-red-600 border border-red-200 px-3 py-1.5 rounded-lg text-sm font-semibold hover:bg-red-100">
-            Reset All
+          <button onclick="resetData()" class="border border-slate-400 px-3 py-1 rounded text-sm hover:bg-slate-100">
+            Reset Poin
           </button>
         </div>
       </div>
 
-      <div class="bg-white rounded-xl shadow-sm overflow-x-auto border border-gray-200">
-        <table class="w-full text-center border-collapse min-w-[1000px]">
+      <div class="overflow-x-auto">
+        <table class="w-full text-center border border-slate-400 min-w-[900px]">
           <thead>
-            <tr class="bg-slate-900 text-white text-xs md:text-sm uppercase tracking-wider">
-              <th class="p-3 text-center">No</th>
-              <th class="p-3 text-left">Nama Anggota</th>
-              <th class="p-3">Kelas</th>
-              <th class="p-3">Organisasi</th>
-              <th class="p-3">Sekbid / Komisi</th>
-              <th class="p-3">Ringan (-5)</th>
-              <th class="p-3">Berat (-15)</th>
-              <th class="p-3">Catatan</th>
-              <th class="p-3">Sisa Poin</th>
-              <th class="p-3">Status Sanksi</th>
+            <tr class="border-b border-slate-400 bg-slate-100 text-xs md:text-sm font-bold uppercase">
+              <th class="p-2 border-r border-slate-400 text-center">No</th>
+              <th class="p-2 border-r border-slate-400 text-left">Nama Anggota</th>
+              <th class="p-2 border-r border-slate-400">Kelas</th>
+              <th class="p-2 border-r border-slate-400">Organisasi</th>
+              <th class="p-2 border-r border-slate-400">Sekbid / Komisi</th>
+              <th class="p-2 border-r border-slate-400">Ringan (-5)</th>
+              <th class="p-2 border-r border-slate-400">Berat (-15)</th>
+              <th class="p-2 border-r border-slate-400">Catatan</th>
+              <th class="p-2">Sisa Poin</th>
             </tr>
           </thead>
-          <tbody id="tableBody" class="text-sm divide-y">
+          <tbody id="tableBody" class="text-sm divide-y divide-slate-300">
             <!-- Diisi JS -->
           </tbody>
         </table>
@@ -281,9 +260,9 @@
       { no: 103, nama: "Mochamad Farid Yusuf", kelas: "X 9", org: "MPS", sekbid: "Komisi B" }
     ];
 
-    // Fungsi Mengambil Data dari LocalStorage
+    // Mengambil data yang tersimpan dari LocalStorage agar tidak reset
     function loadSavedData() {
-      const saved = localStorage.getItem('pelanggaranData');
+      const saved = localStorage.getItem('pelanggaranDataSimple');
       if (saved) {
         return JSON.parse(saved);
       }
@@ -292,9 +271,9 @@
 
     let dataAnggota = loadSavedData();
 
-    // Fungsi Menyimpan Data ke LocalStorage
+    // Menyimpan data ke memori browser
     function saveData() {
-      localStorage.setItem('pelanggaranData', JSON.stringify(dataAnggota));
+      localStorage.setItem('pelanggaranDataSimple', JSON.stringify(dataAnggota));
     }
 
     function updateCounter(no, type, delta) {
@@ -302,7 +281,7 @@
       if (idx !== -1) {
         if (type === 'ringan') dataAnggota[idx].ringan = Math.max(0, dataAnggota[idx].ringan + delta);
         if (type === 'berat') dataAnggota[idx].berat = Math.max(0, dataAnggota[idx].berat + delta);
-        saveData(); // Simpan otomatis setiap perubahan
+        saveData();
         filterData();
       }
     }
@@ -311,19 +290,12 @@
       const idx = dataAnggota.findIndex(a => a.no === no);
       if (idx !== -1) {
         dataAnggota[idx].catatan = val;
-        saveData(); // Simpan otomatis saat catatan diisi
+        saveData();
       }
     }
 
     function getSisaPoin(ringan, berat) {
       return Math.max(0, 100 - ((ringan * 5) + (berat * 15)));
-    }
-
-    function getStatusBadge(poin) {
-      if (poin > 75) return `<span class="bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-md text-xs font-bold">Aman</span>`;
-      if (poin > 50) return `<span class="bg-amber-100 text-amber-700 px-2.5 py-1 rounded-md text-xs font-bold">SP 1</span>`;
-      if (poin > 0) return `<span class="bg-orange-100 text-orange-700 px-2.5 py-1 rounded-md text-xs font-bold">SP 2</span>`;
-      return `<span class="bg-rose-100 text-rose-700 px-2.5 py-1 rounded-md text-xs font-bold">SP 3</span>`;
     }
 
     function renderTable(data) {
@@ -333,69 +305,47 @@
       data.forEach((item) => {
         const sisaPoin = getSisaPoin(item.ringan, item.berat);
         const row = document.createElement("tr");
-        row.className = "hover:bg-slate-50 border-b border-gray-100";
-
-        const orgBadgeClass = item.org === 'MPS' 
-          ? 'bg-blue-100 text-blue-700 font-extrabold' 
-          : 'bg-slate-300 text-slate-800 font-extrabold';
+        row.className = "hover:bg-slate-50";
 
         row.innerHTML = `
-          <!-- Nomor -->
-          <td class="p-3 text-slate-400 font-medium">${item.no}</td>
-
-          <!-- Nama Anggota -->
-          <td class="p-3 text-left font-semibold text-slate-800">${item.nama}</td>
-
-          <!-- Kelas -->
-          <td class="p-3 text-slate-600">${item.kelas}</td>
-
-          <!-- Organisasi -->
-          <td class="p-3">
-            <span class="px-2.5 py-1 rounded-md text-xs ${orgBadgeClass}">
-              ${item.org}
-            </span>
-          </td>
-
-          <!-- Sekbid / Komisi -->
-          <td class="p-3 text-xs text-slate-500 font-medium">${item.sekbid}</td>
+          <td class="p-2 border-r border-slate-300">${item.no}</td>
+          <td class="p-2 border-r border-slate-300 text-left font-bold">${item.nama}</td>
+          <td class="p-2 border-r border-slate-300">${item.kelas}</td>
+          <td class="p-2 border-r border-slate-300 font-bold">${item.org}</td>
+          <td class="p-2 border-r border-slate-300 text-xs">${item.sekbid}</td>
 
           <!-- Pelanggaran Ringan (-5) -->
-          <td class="p-3">
-            <div class="flex items-center justify-center gap-1.5">
-              <button onclick="updateCounter(${item.no}, 'ringan', -1)" class="w-6 h-6 bg-slate-100 hover:bg-slate-200 font-bold rounded text-slate-600">-</button>
-              <span class="w-4 text-center font-bold">${item.ringan}</span>
-              <button onclick="updateCounter(${item.no}, 'ringan', 1)" class="w-6 h-6 bg-amber-500 hover:bg-amber-600 font-bold rounded text-white">+</button>
+          <td class="p-2 border-r border-slate-300">
+            <div class="flex items-center justify-center gap-2">
+              <button onclick="updateCounter(${item.no}, 'ringan', -1)" class="w-6 h-6 border border-slate-400 font-bold rounded hover:bg-slate-200">-</button>
+              <span class="w-4 font-bold">${item.ringan}</span>
+              <button onclick="updateCounter(${item.no}, 'ringan', 1)" class="w-6 h-6 border border-slate-400 font-bold rounded hover:bg-slate-200">+</button>
             </div>
           </td>
 
           <!-- Pelanggaran Berat (-15) -->
-          <td class="p-3">
-            <div class="flex items-center justify-center gap-1.5">
-              <button onclick="updateCounter(${item.no}, 'berat', -1)" class="w-6 h-6 bg-slate-100 hover:bg-slate-200 font-bold rounded text-slate-600">-</button>
-              <span class="w-4 text-center font-bold">${item.berat}</span>
-              <button onclick="updateCounter(${item.no}, 'berat', 1)" class="w-6 h-6 bg-rose-500 hover:bg-rose-600 font-bold rounded text-white">+</button>
+          <td class="p-2 border-r border-slate-300">
+            <div class="flex items-center justify-center gap-2">
+              <button onclick="updateCounter(${item.no}, 'berat', -1)" class="w-6 h-6 border border-slate-400 font-bold rounded hover:bg-slate-200">-</button>
+              <span class="w-4 font-bold">${item.berat}</span>
+              <button onclick="updateCounter(${item.no}, 'berat', 1)" class="w-6 h-6 border border-slate-400 font-bold rounded hover:bg-slate-200">+</button>
             </div>
           </td>
 
           <!-- Catatan -->
-          <td class="p-3">
+          <td class="p-2 border-r border-slate-300">
             <input 
               type="text" 
               value="${item.catatan}" 
               onchange="updateCatatan(${item.no}, this.value)"
               placeholder="-" 
-              class="border rounded px-2 py-1 text-xs w-28 text-center focus:outline-none focus:ring-1 focus:ring-slate-400"
+              class="border border-slate-300 rounded px-2 py-0.5 text-xs w-32 text-center focus:outline-none"
             />
           </td>
 
           <!-- Sisa Poin -->
-          <td class="p-3 font-bold text-base ${sisaPoin < 100 ? 'text-rose-600' : 'text-slate-800'}">
+          <td class="p-2 font-bold text-base">
             ${sisaPoin}
-          </td>
-
-          <!-- Status Sanksi -->
-          <td class="p-3">
-            ${getStatusBadge(sisaPoin)}
           </td>
         `;
 
@@ -417,9 +367,9 @@
     }
 
     function resetData() {
-      if (confirm("Reset seluruh data poin & catatan ke kondisi awal?")) {
+      if (confirm("Reset seluruh data poin kembali ke 100?")) {
         dataAnggota = rawData.map(item => ({ ...item, ringan: 0, berat: 0, catatan: "" }));
-        localStorage.removeItem('pelanggaranData'); // Hapus data dari penyimpanan
+        localStorage.removeItem('pelanggaranDataSimple');
         filterData();
       }
     }
